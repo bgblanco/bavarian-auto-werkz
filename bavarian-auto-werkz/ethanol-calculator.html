@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethanol Calculator | Bavarian Auto Werkz - BMW E85 Mixing Calculator</title>
+    <meta name="description" content="Calculate the perfect ethanol fuel mixture for your BMW. Professional E85 mixing calculator for N54, N55, and S55 engines. Optimize performance safely.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+    <!-- BMW M-Stripe -->
+    <div class="m-stripe"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Bavarian Auto Werkz Logo">
+                <div class="logo-text">
+                    <h1>BAVARIAN AUTO WERKZ</h1>
+                    <p class="logo-tagline">BMW • European • Performance</p>
+                </div>
+            </a>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="code-checker.html" class="nav-link">Code Checker</a></li>
+                <li><a href="ethanol-calculator.html" class="nav-link active">Ethanol Calculator</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Book Service</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                Performance Tool
+            </div>
+            
+            <h1>BMW Ethanol <span class="text-primary">Mixing Calculator</span></h1>
+            
+            <p class="subtitle">
+                Calculate the exact amount of E85 needed to achieve your target ethanol percentage. 
+                Designed specifically for BMW performance enthusiasts running flex fuel setups.
+            </p>
+            
+            <div class="hero-actions">
+                <a href="#calculator" class="btn btn-primary">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                        <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 1 1 0 000 2H6a2 2 0 100 4h2a2 2 0 100-4h-.09A1.65 1.65 0 018 4.65a1.65 1.65 0 00-.33-1.82A1.65 1.65 0 016 2a2 2 0 00-2 3v10a2 2 0 104 0V5z" clip-rule="evenodd"/>
+                    </svg>
+                    Start Calculating
+                </a>
+                <a href="#info" class="btn btn-secondary">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                    </svg>
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="section" id="calculator">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">E85 Mixing Calculator</h2>
+                <p class="section-subtitle">
+                    Enter your current fuel details to calculate how much E85 to add
+                </p>
+            </div>
+            
+            <div class="calculator-container">
+                <form id="ethanol-calculator" class="calculator-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="tank-size">Tank Size (gallons)</label>
+                            <input type="number" id="tank-size" name="tank-size" min="1" max="50" step="0.1" required>
+                            <small>Your BMW's total fuel tank capacity</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="current-level">Current Fuel Level (%)</label>
+                            <input type="number" id="current-level" name="current-level" min="0" max="100" step="1" required>
+                            <small>Percentage of fuel currently in tank</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="current-ethanol">Current Ethanol Content (%)</label>
+                            <input type="number" id="current-ethanol" name="current-ethanol" min="0" max="100" step="1" required>
+                            <small>Current E-content (E30 = 30%)</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="target-ethanol">Target Ethanol Content (%)</label>
+                            <input type="number" id="target-ethanol" name="target-ethanol" min="0" max="85" step="1" required>
+                            <small>Desired E-content after mixing</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="e85-content">E85 Actual Ethanol (%)</label>
+                            <input type="number" id="e85-content" name="e85-content" min="70" max="85" step="1" value="85" required>
+                            <small>Actual ethanol in E85 (typically 70-85%)</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pump-gas-ethanol">Pump Gas Ethanol (%)</label>
+                            <input type="number" id="pump-gas-ethanol" name="pump-gas-ethanol" min="0" max="15" step="1" value="10" required>
+                            <small>Ethanol in regular pump gas (typically 10%)</small>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-large">Calculate E85 Needed</button>
+                </form>
+                
+                <div id="results" class="calculator-results" style="display: none;">
+                    <h3>Mixing Instructions</h3>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <h4>E85 to Add</h4>
+                            <p class="result-value" id="e85-amount">0.0 gallons</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>Pump Gas to Add</h4>
+                            <p class="result-value" id="pump-gas-amount">0.0 gallons</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>Final Ethanol Content</h4>
+                            <p class="result-value" id="final-ethanol">E0</p>
+                        </div>
+                        <div class="result-card">
+                            <h4>Total Fuel After Fill</h4>
+                            <p class="result-value" id="total-fuel">0.0 gallons</p>
+                        </div>
+                    </div>
+                    <div id="warning-message" class="warning-box" style="display: none;">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Educational Content -->
+    <section class="section section-dark" id="info">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">BMW Ethanol Performance Guide</h2>
+                <p class="section-subtitle">
+                    Everything you need to know about running ethanol in your BMW
+                </p>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Compatible BMW Engines</h3>
+                    <ul class="feature-list">
+                        <li>N54 Twin Turbo (with flex fuel kit)</li>
+                        <li>N55 Single Turbo (with proper tuning)</li>
+                        <li>S55 M3/M4 Engine (with upgrades)</li>
+                        <li>B58 (newer models with flex fuel)</li>
+                    </ul>
+                    <p>Always verify compatibility with your specific model year and ensure proper tuning.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Performance Benefits</h3>
+                    <ul class="feature-list">
+                        <li>100+ octane rating (E85)</li>
+                        <li>30-50% more power potential</li>
+                        <li>Cooler combustion temperatures</li>
+                        <li>Reduced knock and pre-ignition</li>
+                        <li>Cleaner emissions</li>
+                    </ul>
+                    <p>E85 allows more aggressive timing and boost levels safely.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Important Considerations</h3>
+                    <ul class="feature-list">
+                        <li>30% lower fuel economy</li>
+                        <li>Requires upgraded fuel system</li>
+                        <li>Professional tuning mandatory</li>
+                        <li>Cold start considerations</li>
+                        <li>Fuel quality varies by season</li>
+                    </ul>
+                    <p>Proper preparation ensures reliable performance gains.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Disclaimer -->
+    <section class="section">
+        <div class="container">
+            <div class="warning-section">
+                <h2>Professional Tuning Required</h2>
+                <div class="disclaimer-content">
+                    <p><strong>WARNING:</strong> Running ethanol blends without proper tuning and fuel system upgrades can cause severe engine damage. This calculator is for reference only.</p>
+                    <ul>
+                        <li>Professional flex fuel tuning is mandatory before running ethanol blends</li>
+                        <li>Upgraded fuel pumps and injectors may be required</li>
+                        <li>Ethanol content sensors are highly recommended</li>
+                        <li>Warranty implications should be considered</li>
+                        <li>Always monitor AFRs and fuel trims when changing blends</li>
+                    </ul>
+                    <p>Bavarian Auto Werkz offers professional ethanol tuning services to ensure your BMW runs safely on E85 blends. Contact us for a consultation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section section-dark">
+        <div class="container text-center">
+            <h2 class="section-title">Ready to Unlock More Power?</h2>
+            <p class="section-subtitle">
+                Let our BMW performance experts help you safely implement an ethanol fueling strategy 
+                that maximizes your engine's potential while maintaining reliability.
+            </p>
+            
+            <div class="hero-actions mt-2">
+                <a href="contact.html" class="btn btn-primary">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                    </svg>
+                    Schedule Consultation
+                </a>
+                <a href="services.html" class="btn btn-secondary">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/>
+                    </svg>
+                    Performance Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Bavarian Auto Werkz</h3>
+                <p>Your trusted BMW specialists, treating every vehicle with the care and expertise it deserves. Family owned, community focused.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <p><a href="services.html">BMW Maintenance</a></p>
+                <p><a href="services.html">Performance Tuning</a></p>
+                <p><a href="services.html">European Cars</a></p>
+                <p><a href="code-checker.html">BMW Code Checker</a></p>
+                <p><a href="ethanol-calculator.html">Ethanol Calculator</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Local to Fresno, CA</p>
+                <p>Phone: (559) 570-4201</p>
+                <p>Email: bavarian.autowerkz@gmail.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                <p>Saturday: 9:00 AM - 4:00 PM</p>
+                <p>Sunday: Closed</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bavarian Auto Werkz. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Calculator Specific Styles */
+        .calculator-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .calculator-form {
+            margin-bottom: 2rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .form-group input {
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group small {
+            margin-top: 0.25rem;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        .btn-large {
+            width: 100%;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+        }
+
+        .calculator-results {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .calculator-results h3 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: var(--primary);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .result-card h4 {
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .result-value {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        .warning-box p {
+            margin: 0;
+        }
+
+        .warning-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .warning-section h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .disclaimer-content ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .disclaimer-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .feature-list li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-container {
+                padding: 1.5rem;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenuToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                    mobileMenuToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Ethanol Calculator Logic
+        document.getElementById('ethanol-calculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get input values
+            const tankSize = parseFloat(document.getElementById('tank-size').value);
+            const currentLevel = parseFloat(document.getElementById('current-level').value) / 100;
+            const currentEthanol = parseFloat(document.getElementById('current-ethanol').value) / 100;
+            const targetEthanol = parseFloat(document.getElementById('target-ethanol').value) / 100;
+            const e85Content = parseFloat(document.getElementById('e85-content').value) / 100;
+            const pumpGasEthanol = parseFloat(document.getElementById('pump-gas-ethanol').value) / 100;
+            
+            // Calculate current fuel volume
+            const currentFuelVolume = tankSize * currentLevel;
+            
+            // Calculate current ethanol volume
+            const currentEthanolVolume = currentFuelVolume * currentEthanol;
+            
+            // Calculate available space in tank
+            const availableSpace = tankSize - currentFuelVolume;
+            
+            // Initialize results
+            let e85ToAdd = 0;
+            let pumpGasToAdd = 0;
+            let warning = '';
+            
+            // Check if target is achievable
+            if (targetEthanol < currentEthanol) {
+                warning = 'Target ethanol percentage is lower than current. You need to add pump gas only.';
+                // Calculate pump gas needed to dilute
+                pumpGasToAdd = (currentEthanolVolume - (tankSize * targetEthanol)) / (targetEthanol - pumpGasEthanol);
+                if (pumpGasToAdd > availableSpace) {
+                    pumpGasToAdd = availableSpace;
+                    warning = 'Tank space insufficient to reach target. Fill with pump gas to dilute as much as possible.';
+                }
+            } else if (targetEthanol > currentEthanol) {
+                // Calculate E85 needed
+                const targetEthanolVolume = tankSize * targetEthanol;
+                e85ToAdd = (targetEthanolVolume - currentEthanolVolume) / (e85Content - targetEthanol);
+                
+                if (e85ToAdd > availableSpace) {
+                    e85ToAdd = availableSpace;
+                    warning = 'Tank space insufficient to reach exact target. Fill with E85 to get as close as possible.';
+                }
+            } else {
+                warning = 'Current ethanol content already matches target.';
+            }
+            
+            // Calculate final values
+            const totalFuelAfter = currentFuelVolume + e85ToAdd + pumpGasToAdd;
+            const totalEthanolAfter = currentEthanolVolume + (e85ToAdd * e85Content) + (pumpGasToAdd * pumpGasEthanol);
+            const finalEthanolPercent = (totalEthanolAfter / totalFuelAfter) * 100;
+            
+            // Display results
+            document.getElementById('e85-amount').textContent = e85ToAdd.toFixed(2) + ' gallons';
+            document.getElementById('pump-gas-amount').textContent = pumpGasToAdd.toFixed(2) + ' gallons';
+            document.getElementById('final-ethanol').textContent = 'E' + Math.round(finalEthanolPercent);
+            document.getElementById('total-fuel').textContent = totalFuelAfter.toFixed(2) + ' gallons';
+            
+            // Show warning if applicable
+            const warningElement = document.getElementById('warning-message');
+            if (warning) {
+                warningElement.querySelector('p').textContent = warning;
+                warningElement.style.display = 'block';
+            } else {
+                warningElement.style.display = 'none';
+            }
+            
+            // Show results
+            document.getElementById('results').style.display = 'block';
+            
+            // Scroll to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    </script>
+</body>
+</html>
