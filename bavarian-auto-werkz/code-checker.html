@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="dns-prefetch" href="https://links.sentinelpeaksolutions.com">
     <title>BMW Code Checker | Bavarian Auto Werkz - Diagnostic Codes</title>
     <meta name="description" content="Look up BMW diagnostic trouble codes (DTC) and error codes. Get explanations and solutions for common BMW check engine and system codes.">
     <link rel="stylesheet" href="styles.css">
@@ -16,7 +21,7 @@
     <header class="header">
         <nav class="nav-container">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="Bavarian Auto Werkz Logo">
+                <img src="logo.png" alt="Bavarian Auto Werkz Logo" width="42" height="42" decoding="async" fetchpriority="high">
                 <div class="logo-text">
                     <h1>BAVARIAN AUTO WERKZ</h1>
                     <p class="logo-tagline">BMW • European • Performance</p>
@@ -37,7 +42,7 @@
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="code-checker.html" class="nav-link active">Code Checker</a></li>
                 <li><a href="ethanol-calculator.html" class="nav-link">Ethanol Calculator</a></li>
-                <li><a href="contact.html" class="btn btn-primary">Book Service</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Book an Appointment</a></li>
             </ul>
         </nav>
     </header>
@@ -59,15 +64,11 @@
             
             <div class="hero-actions">
                 <a href="#code-lookup" class="btn btn-primary">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/>
-                    </svg>
+                    <i data-lucide="search"></i>
                     Look Up Code
                 </a>
                 <a href="contact.html" class="btn btn-secondary">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                    </svg>
+                    <i data-lucide="badge-check"></i>
                     Get Professional Help
                 </a>
             </div>
@@ -91,9 +92,7 @@
                         <input type="text" id="code-input" class="form-input" placeholder="P0171" style="text-transform: uppercase;">
                     </div>
                     <button onclick="lookupCode()" class="btn btn-primary" style="width: 100%;">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"/>
-                        </svg>
+                        <i data-lucide="search"></i>
                         Look Up Code
                     </button>
                     
@@ -141,7 +140,7 @@
                     <h3>P0420 - Catalyst Efficiency</h3>
                     <p><strong>Bank 1</strong></p>
                     <p>Catalytic converter efficiency below threshold. May indicate failing catalytic converter or oxygen sensor issues.</p>
-                    <p style="color: var(--m-orange); font-weight: 600;">Severity: Moderate</p>
+                    <p style="color: #f59e0b; font-weight: 600;">Severity: Moderate</p>
                 </div>
                 
                 <div class="card" onclick="showCodeDetails('P1014')">
@@ -155,7 +154,7 @@
                     <h3>P2177 - System Too Lean</h3>
                     <p><strong>Off Idle Bank 1</strong></p>
                     <p>System running lean off idle conditions. Often related to carbon buildup in intake valves or fuel injection issues.</p>
-                    <p style="color: var(--m-orange); font-weight: 600;">Severity: Moderate</p>
+                    <p style="color: #f59e0b; font-weight: 600;">Severity: Moderate</p>
                 </div>
             </div>
         </div>
@@ -295,7 +294,7 @@
             
             <div class="footer-section">
                 <h3>Contact Info</h3>
-                <p>Local to Fresno, CA</p>
+                <p>Serving Fresno, CA</p>
                 <p>Phone: (559) 570-4201</p>
                 <p>Email: bavarian.autowerkz@gmail.com</p>
             </div>
@@ -309,38 +308,12 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2024 Bavarian Auto Werkz. All rights reserved.</p>
+            <p>&copy; 2026 Bavarian Auto Werkz. All rights reserved. &middot; <a href="privacy.html">Privacy &amp; Cookie Policy</a></p>
+            <p class="footer-credit">Designed by <a href="https://sentinelpeaksolutions.com/" target="_blank" rel="noopener">Sentinel Peak Solutions</a></p>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            mobileMenuToggle.addEventListener('click', function() {
-                mobileMenuToggle.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
-            
-            // Close menu when clicking on nav links
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileMenuToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                });
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                    mobileMenuToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                }
-            });
-        });
 
         // Existing code-checker functionality below
         // BMW Diagnostic Code Database
@@ -446,8 +419,8 @@
                 const severityColor = getSeverityColor(codeData.severity);
                 
                 result.innerHTML = `
-                    <div style="border-left: 4px solid ${severityColor}; padding-left: 1rem; background: #f8f9fa; border-radius: 8px; padding: 1.5rem;">
-                        <h3 style="color: var(--charcoal); margin-bottom: 1rem;">${code} - ${codeData.title}</h3>
+                    <div style="border-left: 4px solid ${severityColor}; padding-left: 1rem; background: var(--surface-raised); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;">
+                        <h3 style="color: var(--text); margin-bottom: 1rem;">${code} - ${codeData.title}</h3>
                         <p><strong>Description:</strong> ${codeData.description}</p>
                         
                         <p><strong>Common Causes:</strong></p>
@@ -463,8 +436,8 @@
                         <p><strong>Severity:</strong> <span style="color: ${severityColor}; font-weight: 600;">${codeData.severity}</span></p>
                         <p><strong>Recommended Action:</strong> ${codeData.action}</p>
                         
-                        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-gray);">
-                            <p style="font-size: 0.9rem; color: var(--medium-gray);">
+                        <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border);">
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">
                                 <strong>Note:</strong> This information is for reference only. Professional diagnosis is recommended for accurate problem identification and repair.
                             </p>
                         </div>
@@ -473,8 +446,8 @@
                 result.style.display = 'block';
             } else {
                 result.innerHTML = `
-                    <div style="border-left: 4px solid var(--medium-gray); padding-left: 1rem; background: #f8f9fa; border-radius: 8px; padding: 1.5rem;">
-                        <h3 style="color: var(--charcoal); margin-bottom: 1rem;">Code Not Found: ${code}</h3>
+                    <div style="border-left: 4px solid var(--text-faint); padding-left: 1rem; background: var(--surface-raised); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;">
+                        <h3 style="color: var(--text); margin-bottom: 1rem;">Code Not Found: ${code}</h3>
                         <p>This diagnostic code is not in our current database. This could mean:</p>
                         <ul style="margin: 1rem 0 1rem 1.5rem;">
                             <li>It's a newer or less common code</li>
@@ -493,9 +466,9 @@
         function getSeverityColor(severity) {
             switch(severity) {
                 case 'High': return 'var(--m-red)';
-                case 'Moderate': return 'var(--m-orange)';
-                case 'Low': return 'var(--bmw-blue)';
-                default: return 'var(--medium-gray)';
+                case 'Moderate': return '#f59e0b';
+                case 'Low': return 'var(--accent)';
+                default: return 'var(--text-muted)';
             }
         }
         
@@ -512,5 +485,7 @@
             }
         });
     </script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="main.js" defer></script>
 </body>
 </html>

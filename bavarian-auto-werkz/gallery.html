@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0b">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="dns-prefetch" href="https://links.sentinelpeaksolutions.com">
     <title>Gallery | Bavarian Auto Werkz - Our Work & Facility</title>
     <meta name="description" content="See our BMW specialist work in action. Browse photos of our professional facility, completed projects, and satisfied customers' vehicles.">
     <link rel="stylesheet" href="styles.css">
@@ -16,7 +21,7 @@
     <header class="header">
         <nav class="nav-container">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="Bavarian Auto Werkz Logo">
+                <img src="logo.png" alt="Bavarian Auto Werkz Logo" width="42" height="42" decoding="async" fetchpriority="high">
                 <div class="logo-text">
                     <h1>BAVARIAN AUTO WERKZ</h1>
                     <p class="logo-tagline">BMW • European • Performance</p>
@@ -37,7 +42,7 @@
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
                 <li><a href="code-checker.html" class="nav-link">Code Checker</a></li>
                 <li><a href="ethanol-calculator.html" class="nav-link">Ethanol Calculator</a></li>
-                <li><a href="contact.html" class="btn btn-primary">Book Service</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Book an Appointment</a></li>
             </ul>
         </nav>
     </header>
@@ -59,17 +64,91 @@
             
             <div class="hero-actions">
                 <a href="services.html" class="btn btn-primary">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M13 6a3 3 0 11-6 0 3 3 0 616 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
-                    </svg>
+                    <i data-lucide="list-checks"></i>
                     Our Services
                 </a>
                 <a href="contact.html" class="btn btn-secondary">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                    </svg>
+                    <i data-lucide="list-checks"></i>
                     Schedule Visit
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest From the Shop -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest From the Shop</h2>
+                <p class="section-subtitle">
+                    Our most recent work — from enthusiast BMWs to exotic European performance cars in for specialist service.
+                </p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="recent-work-11.jpg" alt="Silver BMW E92 M3 raised on a two-post lift for service" class="shop-photo" width="1200" height="1600" loading="lazy" decoding="async">
+                    </div>
+                    <h3>E9x M3 Service</h3>
+                    <p>A silver E92 M3 up on the lift for a full inspection and service — exactly the kind of enthusiast BMW we live for.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="recent-work-10.jpg" alt="Lamborghini Huracan V10 engine bay with forged carbon rear wing" class="shop-photo" width="1200" height="1600" loading="lazy" decoding="async">
+                    </div>
+                    <h3>Lamborghini Huracán V10</h3>
+                    <p>European performance isn't just BMW. This Huracán's 5.2L V10 came in for specialist care and inspection.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="recent-work-16.jpg" alt="Satin black Porsche 911 with yellow ceramic brakes in the shop" class="shop-photo" width="900" height="1600" loading="lazy" decoding="async">
+                    </div>
+                    <h3>Porsche 911 Turbo</h3>
+                    <p>A satin-black 911 on carbon-ceramic brakes in for service — exotic and performance work is our specialty.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="recent-work-9.jpg" alt="Transmission and transfer case removed from underneath a vehicle on a lift" class="shop-photo" width="1200" height="1600" loading="lazy" decoding="async">
+                    </div>
+                    <h3>Driveline &amp; Transmission</h3>
+                    <p>Transmission and transfer case dropped for a major driveline job — heavy mechanical work handled in-house.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="recent-work-12.jpg" alt="Close-up of a transmission oil pan during underbody service" class="shop-photo" width="1200" height="1600" loading="lazy" decoding="async">
+                    </div>
+                    <h3>Precision Mechanical Work</h3>
+                    <p>Detailed underbody and transmission service — careful, methodical work done right the first time.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="recent-work-14.jpg" alt="Comparison of a clean new oil filter next to a used dirty filter" class="shop-photo" width="1200" height="1600" loading="lazy" decoding="async">
+                    </div>
+                    <h3>Genuine Maintenance</h3>
+                    <p>Old versus new — fresh filtration and genuine parts on every maintenance service we perform.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="recent-work-13.jpg" alt="Liqui Moly dual-clutch transmission fluid and genuine BMW parts on the bench" class="shop-photo" width="1200" height="1600" loading="lazy" decoding="async">
+                    </div>
+                    <h3>Quality Parts &amp; Fluids</h3>
+                    <p>We use manufacturer-approved fluids like Liqui Moly and genuine OEM parts for lasting results.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img src="recent-work-15.jpg" alt="BMW E90 3 Series with M-stripe accents parked at sunset" class="shop-photo" width="1200" height="1600" loading="lazy" decoding="async">
+                    </div>
+                    <h3>Built BMWs</h3>
+                    <p>From daily drivers to built enthusiast cars, we keep your 3 Series dialed in and running its best.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -87,7 +166,7 @@
             <div class="grid">
                 <div class="card">
                     <div class="card-image">
-                        <img src="actual-service-bay.jpg" alt="BMW vehicle on hydraulic lift in our actual service bay" class="feature-image">
+                        <img loading="lazy" decoding="async" src="actual-service-bay.jpg" alt="BMW vehicle on hydraulic lift in our actual service bay" class="feature-image">
                     </div>
                     <h3>Service Bays</h3>
                     <p>Our service bays with hydraulic lifts and BMW-specific tools. Each bay is designed for efficient and safe vehicle service.</p>
@@ -95,7 +174,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="actual-diagnostic-equipment.jpg" alt="Our actual BMW diagnostic computer and specialized tools" class="feature-image">
+                        <img loading="lazy" decoding="async" src="actual-diagnostic-equipment.jpg" alt="Our actual BMW diagnostic computer and specialized tools" class="feature-image">
                     </div>
                     <h3>Diagnostic Equipment</h3>
                     <p>Our BMW diagnostic computers and specialized tools that give us professional diagnostic capabilities for accurate problem identification.</p>
@@ -103,7 +182,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="actual-customer-lounge.jpg" alt="Our actual comfortable customer waiting area with seating and refreshments" class="feature-image">
+                        <img loading="lazy" decoding="async" src="actual-customer-lounge.jpg" alt="Our actual comfortable customer waiting area with seating and refreshments" class="feature-image">
                     </div>
                     <h3>Customer Lounge</h3>
                     <p>Our comfortable waiting area with seating, refreshments, and a view of our work area so you can see the care we take with your BMW.</p>
@@ -125,7 +204,7 @@
             <div class="grid">
                 <div class="card">
                     <div class="card-image">
-                        <img src="instagram-images/2894854267697865437_2894854263344132242.jpg" alt="BMW engine work in progress showing detailed engine service" class="feature-image">
+                        <img loading="lazy" decoding="async" src="instagram-images/2894854267697865437_2894854263344132242.jpg" alt="BMW engine work in progress showing detailed engine service" class="feature-image">
                     </div>
                     <h3>Engine Services</h3>
                     <p>Major engine work including timing chain service, valve cover gasket replacement, and complete engine rebuilds. See examples of the detailed work we perform.</p>
@@ -133,7 +212,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="instagram-images/2897532297255648054_2897532292180677987.jpg" alt="BMW performance modifications and upgrades in progress" class="feature-image">
+                        <img loading="lazy" decoding="async" src="instagram-images/2897532297255648054_2897532292180677987.jpg" alt="BMW performance modifications and upgrades in progress" class="feature-image">
                     </div>
                     <h3>Performance Upgrades</h3>
                     <p>Custom performance modifications including turbo upgrades, exhaust systems, and ECU tuning. See examples of the upgrade work we perform.</p>
@@ -141,7 +220,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="instagram-images/2933094941997260552_2933094936653679095.jpg" alt="BMW spark plugs laid out during maintenance service showing detailed maintenance work" class="feature-image">
+                        <img loading="lazy" decoding="async" src="instagram-images/2933094941997260552_2933094936653679095.jpg" alt="BMW spark plugs laid out during maintenance service showing detailed maintenance work" class="feature-image">
                     </div>
                     <h3>Maintenance Services</h3>
                     <p>Routine maintenance done right - oil changes, brake service, spark plug replacement, and comprehensive inspections. Clean, professional workmanship on every job.</p>
@@ -163,7 +242,7 @@
             <div class="grid">
                 <div class="card">
                     <div class="card-image">
-                        <img src="instagram-images/2934592528457805050_2934592523718354722.jpg" alt="BMW 3-Series service and maintenance work" class="feature-image">
+                        <img loading="lazy" decoding="async" src="instagram-images/2934592528457805050_2934592523718354722.jpg" alt="BMW 3-Series service and maintenance work" class="feature-image">
                     </div>
                     <h3>Daily Operations</h3>
                     <p>See the meticulous care and attention that goes into every job. From detailed inspections to precision work, we treat every BMW like it's our own.</p>
@@ -171,7 +250,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="instagram-images/2993373520060173471_2993373515429508097.jpg" alt="BMW X-Series SUV professional service" class="feature-image">
+                        <img loading="lazy" decoding="async" src="instagram-images/2993373520060173471_2993373515429508097.jpg" alt="BMW X-Series SUV professional service" class="feature-image">
                     </div>
                     <h3>Workspace Excellence</h3>
                     <p>Our organized, professional environment ensures efficient service and quality results. See how we maintain the highest standards in everything we do.</p>
@@ -179,7 +258,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="instagram-images/3230602542709516490_3230602537282210579.jpg" alt="BMW M-Series performance vehicle service" class="feature-image">
+                        <img loading="lazy" decoding="async" src="instagram-images/3230602542709516490_3230602537282210579.jpg" alt="BMW M-Series performance vehicle service" class="feature-image">
                     </div>
                     <h3>Technical Expertise</h3>
                     <p>Watch our skilled technicians at work, using specialized tools and years of experience to diagnose and solve complex BMW issues with precision.</p>
@@ -187,7 +266,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="instagram-images/2897532297255648054_2897532292197398552.jpg" alt="Classic BMW restoration and maintenance" class="feature-image">
+                        <img loading="lazy" decoding="async" src="instagram-images/2897532297255648054_2897532292197398552.jpg" alt="Classic BMW restoration and maintenance" class="feature-image">
                     </div>
                     <h3>Attention to Detail</h3>
                     <p>Every component matters. See the careful attention we give to each part, ensuring quality workmanship that keeps your BMW running at its best.</p>
@@ -195,7 +274,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="instagram-images/2882004143042185678_2882004137858008190.jpg" alt="European luxury vehicle service including Mercedes and Audi" class="feature-image">
+                        <img loading="lazy" decoding="async" src="instagram-images/2882004143042185678_2882004137858008190.jpg" alt="European luxury vehicle service including Mercedes and Audi" class="feature-image">
                     </div>
                     <h3>Team Collaboration</h3>
                     <p>Our experienced team works together, sharing knowledge and expertise to ensure every customer receives the best possible service and results.</p>
@@ -203,7 +282,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="instagram-images/3134931935519785224_3134931929219842410.jpg" alt="Custom BMW performance modifications and upgrades" class="feature-image" style="object-position: center 30%;">
+                        <img loading="lazy" decoding="async" src="instagram-images/3134931935519785224_3134931929219842410.jpg" alt="Custom BMW performance modifications and upgrades" class="feature-image" style="object-position: center 30%;">
                     </div>
                     <h3>Real Moments</h3>
                     <p>Candid shots from our daily work - the moments that show our genuine passion for BMWs and commitment to excellence in everything we do.</p>
@@ -225,7 +304,7 @@
             <div class="grid">
                 <div class="card">
                     <div class="card-image">
-                        <img src="instagram-images/2894854267697865437_2894854263343977640.jpg" alt="BMW 3-series service and maintenance" class="feature-image">
+                        <img loading="lazy" decoding="async" src="instagram-images/2894854267697865437_2894854263343977640.jpg" alt="BMW 3-series service and maintenance" class="feature-image">
                     </div>
                     <h3>Professional BMW Service</h3>
                     <p>Expert maintenance and repair work on BMW vehicles. Quality service using proper tools and genuine parts.</p>
@@ -233,7 +312,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="instagram-images/2897532297255648054_2897532292214131168.jpg" alt="BMW X-series SUV service" class="feature-image">
+                        <img loading="lazy" decoding="async" src="instagram-images/2897532297255648054_2897532292214131168.jpg" alt="BMW X-series SUV service" class="feature-image">
                     </div>
                     <h3>Quality Workmanship</h3>
                     <p>Detailed service work performed by experienced technicians. Every job completed to the highest standards.</p>
@@ -241,7 +320,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="instagram-images/2897532297255648054_2897532292239232151.jpg" alt="BMW M-series performance work" class="feature-image">
+                        <img loading="lazy" decoding="async" src="instagram-images/2897532297255648054_2897532292239232151.jpg" alt="BMW M-series performance work" class="feature-image">
                     </div>
                     <h3>Expert BMW Care</h3>
                     <p>Professional BMW service and maintenance. Skilled technicians working on quality European vehicles.</p>
@@ -249,7 +328,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="instagram-images/2897532297255648054_2897532292214103856.jpg" alt="BMW 5-series executive sedan service" class="feature-image">
+                        <img loading="lazy" decoding="async" src="instagram-images/2897532297255648054_2897532292214103856.jpg" alt="BMW 5-series executive sedan service" class="feature-image">
                     </div>
                     <h3>Professional Service</h3>
                     <p>Comprehensive BMW maintenance and repair. Quality work performed in our professional facility.</p>
@@ -257,7 +336,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="instagram-images/2894854267697865437_2894854263453151561.jpg" alt="Classic BMW restoration and service" class="feature-image" style="object-position: center 20%;">
+                        <img loading="lazy" decoding="async" src="instagram-images/2894854267697865437_2894854263453151561.jpg" alt="Classic BMW restoration and service" class="feature-image" style="object-position: center 20%;">
                     </div>
                     <h3>Experienced Team</h3>
                     <p>Our skilled technicians bring years of BMW experience to every job. Professional service you can trust.</p>
@@ -265,7 +344,7 @@
                 
                 <div class="card">
                     <div class="card-image">
-                        <img src="instagram-images/3277419197680525517_3277419192311777332.jpg" alt="BMW performance modifications" class="feature-image">
+                        <img loading="lazy" decoding="async" src="instagram-images/3277419197680525517_3277419192311777332.jpg" alt="BMW performance modifications" class="feature-image">
                     </div>
                     <h3>Satisfied Customers</h3>
                     <p>Real work for real customers. See examples of our completed projects and happy BMW owners.</p>
@@ -274,28 +353,23 @@
         </div>
     </section>
 
-    <!-- Visit Our Shop -->
+    <!-- Book an Appointment -->
     <section class="section section-dark">
         <div class="container text-center">
-            <h2 class="section-title">Visit Our Shop</h2>
+            <h2 class="section-title">Book an Appointment or Call (559) 570-4201</h2>
             <p class="section-subtitle">
-                We welcome customers to visit and see our facility. Stop by during business hours 
-                for a tour or to discuss your BMW's service needs.
+                Like what you see? Serving Fresno, CA, we'd love to care for your BMW.
+                Book an appointment online or give us a call to get started.
             </p>
-            
+
             <div class="hero-actions mt-2">
                 <a href="contact.html" class="btn btn-primary">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"/>
-                        <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd"/>
-                    </svg>
-                    Get Directions
+                    <i data-lucide="calendar-check"></i>
+                    Book an Appointment
                 </a>
-                <a href="contact.html" class="btn btn-secondary">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                    </svg>
-                    Call First
+                <a href="tel:+15595704201" class="btn btn-secondary">
+                    <i data-lucide="phone"></i>
+                    Call (559) 570-4201
                 </a>
             </div>
         </div>
@@ -320,7 +394,7 @@
             
             <div class="footer-section">
                 <h3>Contact Info</h3>
-                <p>Local to Fresno, CA</p>
+                <p>Serving Fresno, CA</p>
                 <p>Phone: (559) 570-4201</p>
                 <p>Email: bavarian.autowerkz@gmail.com</p>
             </div>
@@ -334,38 +408,12 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2024 Bavarian Auto Werkz. All rights reserved.</p>
+            <p>&copy; 2026 Bavarian Auto Werkz. All rights reserved. &middot; <a href="privacy.html">Privacy &amp; Cookie Policy</a></p>
+            <p class="footer-credit">Designed by <a href="https://sentinelpeaksolutions.com/" target="_blank" rel="noopener">Sentinel Peak Solutions</a></p>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            mobileMenuToggle.addEventListener('click', function() {
-                mobileMenuToggle.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
-            
-            // Close menu when clicking on nav links
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileMenuToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                });
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                    mobileMenuToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                }
-            });
-        });
-    </script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="main.js" defer></script>
 </body>
 </html>
