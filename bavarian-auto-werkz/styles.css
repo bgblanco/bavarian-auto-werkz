@@ -1,7 +1,6 @@
 /* Bavarian Auto Werkz - BMW M Carbon Fiber Theme (2026) */
 
-/* Premium fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+/* Premium fonts are loaded via <link> in each page's <head> (faster than @import) */
 
 /* ============================================================
    Design tokens
@@ -286,11 +285,11 @@ a { color: var(--accent-light); }
 .hero {
     padding: 6rem 2rem 5rem;
     background:
-        linear-gradient(rgba(8, 8, 10, 0.72), rgba(8, 8, 10, 0.86)),
+        linear-gradient(100deg, rgba(8, 8, 10, 0.95) 0%, rgba(8, 8, 10, 0.86) 42%, rgba(8, 8, 10, 0.5) 100%),
         url('convenient-service-real.jpg') center/cover no-repeat;
     position: relative;
     overflow: hidden;
-    min-height: 66vh;
+    min-height: 68vh;
     display: flex;
     align-items: center;
 }
@@ -315,56 +314,92 @@ a { color: var(--accent-light); }
 }
 
 .hero-content {
-    max-width: 1000px;
+    max-width: 1240px;
+    width: 100%;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     position: relative;
     z-index: 2;
     color: var(--text);
 }
 
-.hero-badge {
+/* Editorial eyebrow — vertical M-stripe + spaced caps (replaces generic pill) */
+.hero-eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--border-strong);
-    padding: 0.45rem 1.1rem;
-    border-radius: 999px;
+    gap: 0.9rem;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.6rem;
+    padding-left: 0.95rem;
+    position: relative;
+}
+
+.hero-eyebrow::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 1.4em;
+    border-radius: 2px;
+    background: linear-gradient(180deg, var(--m-blue) 0%, var(--m-violet) 55%, var(--m-red) 100%);
+}
+
+/* Marque strip — thin editorial row of brands serviced */
+.hero-marques {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 2.2rem;
+    max-width: 760px;
+    margin-top: 3rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--border);
+}
+
+.hero-marques span {
+    font-family: var(--font-heading);
     font-size: 0.82rem;
     font-weight: 600;
-    letter-spacing: 0.04em;
-    margin-bottom: 1.8rem;
-    backdrop-filter: blur(10px);
-    color: var(--text);
+    letter-spacing: 0.2em;
     text-transform: uppercase;
+    color: var(--text-faint);
+    transition: color 0.25s ease;
 }
 
-.hero-badge svg { width: 16px; height: 16px; color: var(--accent-light); }
+.hero-marques span:hover { color: var(--text); }
 
-.hero-badge .dot {
-    width: 8px;
-    height: 8px;
-    background: var(--m-red);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--m-red);
-    animation: pulse 2s infinite;
+.hero-eyebrow svg {
+    width: 15px;
+    height: 15px;
+    color: var(--accent-light);
 }
 
-.hero h1 { margin-bottom: 1.4rem; color: #fff; }
+.hero h1 {
+    margin-bottom: 1.5rem;
+    color: #fff;
+    font-size: clamp(2.75rem, 6vw, 5rem);
+    letter-spacing: -0.025em;
+}
 .hero h1 .text-primary { color: transparent; background: var(--m-gradient); -webkit-background-clip: text; background-clip: text; }
 
 .hero .subtitle {
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.82);
-    max-width: 640px;
-    margin: 0 auto 2rem;
+    max-width: 600px;
+    margin: 0 0 2rem;
 }
 
 .hero-actions {
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     margin-top: 2rem;
 }
@@ -407,6 +442,7 @@ a { color: var(--accent-light); }
     display: grid;
     gap: 1.75rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: start;
 }
 
 /* ============================================================
@@ -445,7 +481,16 @@ a { color: var(--accent-light); }
 
 .card:hover::before { transform: scaleX(1); }
 
-.card h3 { color: var(--text); margin-bottom: 0.75rem; }
+/* Grid card headers — BMW M tri-color, mapped across the heading text */
+.card h3 {
+    margin-bottom: 0.75rem;
+    background: var(--m-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    width: fit-content;
+    max-width: 100%;
+}
 .card p { color: var(--text-muted); line-height: 1.65; }
 
 .card-icon {
@@ -465,15 +510,15 @@ a { color: var(--accent-light); }
 
 .card-image { margin-bottom: 1.4rem; border-radius: var(--radius-sm); overflow: hidden; }
 
+/* Full, uncropped photo — show the entire image at its natural shape */
 .feature-image {
     width: 100%;
-    height: 210px;
-    object-fit: cover;
-    transition: transform 0.4s ease;
+    height: auto;
     display: block;
+    transition: transform 0.4s ease;
 }
 
-.card:hover .feature-image { transform: scale(1.05); }
+.card:hover .feature-image { transform: scale(1.03); }
 
 /* Shop photos — show the ENTIRE image at its natural shape (no crop, no letterbox) */
 .shop-photo {
@@ -483,37 +528,52 @@ a { color: var(--accent-light); }
     border-radius: var(--radius-sm);
 }
 
-.family-image { object-position: center 20%; }
-.personal-service-image { object-position: center 10%; }
-
 /* ============================================================
    Stats
    ============================================================ */
+/* Spec-bar — one unified carbon panel with hairline dividers */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin: 3rem 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    max-width: 1000px;
+    margin: 2rem auto 0;
+    background:
+        linear-gradient(160deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0) 60%),
+        var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: relative;
+}
+
+.stats-grid::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--m-stripe-gradient);
+    opacity: 0.85;
 }
 
 .stat-card {
     text-align: center;
-    padding: 2rem 1.5rem;
-    background: var(--surface-card);
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    padding: 2.4rem 1.5rem 2.1rem;
+    background: transparent;
+    border: none;
+    border-left: 1px solid var(--border);
+    border-radius: 0;
+    box-shadow: none;
+    transition: background 0.3s ease;
 }
 
-.stat-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--accent);
-}
+.stat-card:first-child { border-left: none; }
+
+.stat-card:hover { background: rgba(255, 255, 255, 0.02); }
 
 .stat-number {
-    font-size: 2.75rem;
+    font-size: clamp(2.2rem, 4vw, 2.85rem);
     font-weight: 800;
     background: var(--m-gradient);
     -webkit-background-clip: text;
@@ -521,9 +581,16 @@ a { color: var(--accent-light); }
     color: transparent;
     margin-bottom: 0.4rem;
     font-family: var(--font-heading);
+    line-height: 1;
 }
 
-.stat-label { color: var(--text-muted); font-weight: 500; }
+.stat-label {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
 
 /* ============================================================
    Dark / accent sections
@@ -752,8 +819,8 @@ a { color: var(--accent-light); }
     .nav-menu .btn { margin-top: 1rem; justify-content: center; }
 
     .hero { padding: 4rem 1.25rem; min-height: 58vh; }
+    .hero h1 { font-size: clamp(2.3rem, 8.5vw, 3.4rem); }
     .bmw-showcase { padding: 2rem 1rem; }
-    .feature-image { height: 170px; }
 
     .hero-actions { flex-direction: column; align-items: center; }
 
@@ -761,6 +828,15 @@ a { color: var(--accent-light); }
 
     .grid { grid-template-columns: 1fr; gap: 1.25rem; }
     .section { padding: 3rem 1.25rem; }
+
+    .hero-marques { gap: 0.9rem 1.6rem; }
+}
+
+@media (max-width: 640px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .stat-card { border-left: 1px solid var(--border); border-top: 1px solid var(--border); }
+    .stat-card:nth-child(odd) { border-left: none; }
+    .stat-card:nth-child(-n+2) { border-top: none; }
 }
 
 @media (max-width: 480px) {
@@ -769,6 +845,7 @@ a { color: var(--accent-light); }
     .logo-text h1 { font-size: 1.05rem; }
     .nav-menu { width: 100vw; right: -100vw; padding: 5rem 1.5rem 2rem; }
     .hero { padding: 3rem 1rem; min-height: 52vh; }
+    .hero h1 { font-size: clamp(1.8rem, 7.6vw, 2.6rem); }
     .section { padding: 2.5rem 1rem; }
     .cookie-banner { bottom: 0.75rem; padding: 1.1rem; }
     .cookie-actions { width: 100%; }
@@ -819,8 +896,7 @@ a { color: var(--accent-light); }
     color: var(--text);
 }
 
-.section-dark .form-label,
-.section-dark .card h3 { color: #fff; }
+.section-dark .form-label { color: #fff; }
 .section-dark .card p { color: rgba(255, 255, 255, 0.82); }
 
 .form-input,
